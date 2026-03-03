@@ -33,6 +33,9 @@ RUN apt-get update && apt-get install -y \
     xfce4 \
     xfce4-terminal \
     dbus-x11 \
+    locales \
+    && echo "en_US.UTF-8 UTF-8" > /etc/locale.gen \
+    && locale-gen en_US.UTF-8 \
     && rm -rf /var/lib/apt/lists/*
 
 # Install pipx and uv
